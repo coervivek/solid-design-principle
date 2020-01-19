@@ -1,6 +1,6 @@
 package srp.solution.employees;
 
-import srp.problem.employees.Gender;
+import common.Gender;
 
 public class Employee {
 

@@ -1,12 +1,8 @@
-package srp.problem.employees;
+package ocp.problem.employees;
 
 import common.Gender;
 
-import java.util.*;
-
 public class Employee {
-
-    private static final Map<String, Employee> EMPLOYEES = new HashMap<>();
 
     private String id;
     private String firstName;
@@ -19,31 +15,6 @@ public class Employee {
         this.lastName = lastName;
         this.gender = gender;
         this.salary = salary;
-    }
-
-    public static List<Employee> getAll() {
-        return List.copyOf(EMPLOYEES.values());
-    }
-
-    public static Optional<Employee> getById(String id) {
-        Objects.requireNonNull(id, "id cannot be null");
-        return Optional.ofNullable(EMPLOYEES.get(id));
-    }
-
-    public static void save(Employee employee) {
-        Objects.requireNonNull(employee, "employee cannot be null");
-        employee.setId(UUID.randomUUID().toString());
-        EMPLOYEES.put(employee.getId(), employee);
-    }
-
-    public static void update(Employee employee) {
-        Objects.requireNonNull(employee, "employee cannot be null");
-        if (employee.getId() != null && EMPLOYEES.containsKey(employee.getId()))
-            EMPLOYEES.put(employee.getId(), employee);
-    }
-
-    public static void delete(String id) {
-        EMPLOYEES.remove(id);
     }
 
     public String getId() {

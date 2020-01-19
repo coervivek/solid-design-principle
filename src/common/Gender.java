@@ -1,4 +1,4 @@
-package srp.problem.employees;
+package common;
 
 public enum Gender {
     MALE, FEMALE
